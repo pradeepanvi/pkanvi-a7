@@ -1,0 +1,76 @@
+<div class="head_txt_area">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2>Start Your Project</h2>
+      <p class="text-center">We’re excited for your next website, <br>We just need few information about your next project</p>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="form_sec">
+            <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+              <aside>
+                <p class="head">Type of project</p>
+                <p>Please select the service you want.</p>
+                <mat-form-field class="example-full-width">
+                    <mat-select placeholder="Service" formControlName="service">
+                      <mat-option *ngFor="let service of services" [value]="service.value">
+                        {{service.value}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+              </aside>
+              <aside>
+                <p class="head">Number of pages</p>
+                <p>Please select number of pages that need to be sliced.</p>
+                <mat-radio-group formControlName="page">
+                  <mat-radio-button *ngFor="let page of pages" [value]="page">{{page}}</mat-radio-button>
+                </mat-radio-group>
+              </aside>
+              <aside>
+                <p class="head">Likely budget</p>
+                <p>Give us an idea of your budget. Final budget will be decided after checking your design files.</p>
+                <mat-radio-group formControlName="budget">
+                  <mat-radio-button *ngFor="let budget of budgets" [value]="budget">{{budget}}</mat-radio-button>
+                </mat-radio-group>
+              </aside>
+              <aside>
+                <p class="head">Project brief</p>
+                <p>Please write here if anything you want to share about this project.</p>
+                <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Leave a comment" formControlName="msg"></textarea>
+                </mat-form-field>
+              </aside>                                                
+              <aside>
+                <p class="head">Share Design File Link (optional)</p>
+                <p>Dropbox link or any other link to download your design files</p>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="https://" formControlName="link">
+                </mat-form-field>
+              </aside>
+              <aside>
+                <p class="head">Your personal details</p>
+                <p>Tell us something about yourself.</p>
+                <div class="row">
+                  <div class="col-sm-6">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Your Name" formControlName="name">
+                      </mat-form-field>
+                  </div>
+                  <div class="col-sm-6">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Your Email" formControlName="email">
+                      </mat-form-field>
+                  </div>
+                </div>
+              </aside>
+              <aside>
+                <button class="btn" type="submit">Send Details</button>
+              </aside>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

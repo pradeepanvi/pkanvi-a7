@@ -7,6 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from "@angular/material/select";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +22,7 @@ import { AboutComponent } from './home/about/about.component';
 import { WhatWeDoComponent } from './home/what-we-do/what-we-do.component';
 import { ProjectsComponent } from './home/projects/projects.component';
 import { ContactComponent } from './home/contact/contact.component';
+import { StartProjectComponent } from './start-project/start-project.component';
 
 
 @NgModule({
@@ -34,6 +38,7 @@ import { ContactComponent } from './home/contact/contact.component';
     WhatWeDoComponent,
     ProjectsComponent,
     ContactComponent,
+    StartProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,9 @@ import { ContactComponent } from './home/contact/contact.component';
     BrowserAnimationsModule,
     MatTabsModule,
     MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
