@@ -1,0 +1,7 @@
+<form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Banner text</label>
+    <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" placeholder="Password" [value]="banner.banner"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

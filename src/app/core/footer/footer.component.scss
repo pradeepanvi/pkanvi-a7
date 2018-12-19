@@ -1,0 +1,34 @@
+.main {
+    padding: 20px 0;
+    background: #ff8e3f;
+    margin-bottom: 36px;
+  }
+  
+  .head {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .start {
+    color: #ff8e3f;
+    background: #ffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 30px;
+    display: inline-block;
+  }
+  
+  .freelance-box {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+    img {
+      max-height: 30px;
+    }
+  }

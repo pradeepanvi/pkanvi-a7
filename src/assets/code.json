@@ -1,0 +1,132 @@
+{
+    "banner" : "<h1>Welcome to <span>Pradeep Kumar</span></h1><h3><span>Angular 2 • Javascript • HTML5 • CSS3 • LESS/SASS</span></h3>",
+    "about_txt" : "<h2>About</h2><p class='text-center'>I’m Rafal, a flexible Freelance Front-End Developer based in London with over a decade of work and experimenting in web tech both in-house and as a freelancer. I’m always ready with passion and enthusiasm in the latest technology.</p>",
+    "about_rolls" : [
+        { 
+            "icon" : "fa-object-group",
+            "head" : "Creative",
+            "text" : "I approach each project individually and I do not spare any ideas. My work continues until everyone is happy."
+        },
+        { 
+            "icon" : "fa-clock-o",
+            "head" : "Time",
+            "text" : "I know how important dates are and how important it is for you to keep your word, so I'm always on time."
+        },
+        { 
+            "icon" : "fa-object-group",
+            "head" : "Brave",
+            "text" : "I like challenges and do not do boring projects. I create based on the latest technology, because I always want to be one step ahead."
+        },
+        { 
+            "icon" : "fa-clock-o",
+            "head" : "Minimalism",
+            "text" : "I put on a simple and functional design. My solutions are easy to use because they convey information rather than distracting."
+        },
+        { 
+            "icon" : "fa-object-group",
+            "head" : "Responsible",
+            "text" : "Completing the project does not mean the end of our cooperation. I am always at your disposal. You can count on my help."
+        },
+        { 
+            "icon" : "fa-object-group",
+            "head" : "Friendly",
+            "text" : "I'm not a big company and you will not be one of my hundreds of clients. Thanks to this I can offer an exceptional service."
+        }
+    ],
+    "about_extra" : [
+        {
+            "number" : "9242",
+            "text" : "Layouts"
+        },
+        {
+            "number" : "1091",
+            "text" : "Projects"
+        },
+        {
+            "number" : "49",
+            "text" : "Clients"
+        }
+    ],
+    "what_text" : "<h2>What we do</h2>",
+    "front_end_skills" : [
+        {
+            "icon" : "fa-desktop",
+            "text" : "Perfect Design"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Responsive"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Pixel Perfect"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "HTML/CSS"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "LESS"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "SCSS/SASS"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "JavaScript"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "PSD to HTML, Sketch"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "SEO"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "HTML Email"
+        }
+    ],
+    "back_end_skills" : [
+        {
+            "icon" : "fa-desktop",
+            "text" : "Web Development"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Optimisation"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Testing"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "WordPress"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Themes"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Magento"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "Drupal"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : "PHP"
+        },
+        {
+            "icon" : "fa-desktop",
+            "text" : ".NET"
+        }
+    ]
+
+}

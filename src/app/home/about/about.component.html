@@ -1,0 +1,26 @@
+<div class="head_txt_area">
+  <div class="row">
+    <div class="col-md-6 offset-md-3" [innerHTML]="about.about_txt">
+      
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-md-4" *ngFor="let roll of about.about_rolls">
+    <aside>
+      <i class="fa {{roll.icon}} fa-4x fa-fw"></i>
+      <h3>{{roll.head}}</h3>
+      <p>{{roll.text}}</p>
+    </aside>
+  </div>
+  </div>
+</div>
+<div class="extra-about">
+<div class="row">
+  <div class="col-lg-3" *ngFor="let extra of about.about_extra">
+    <p class="number">{{extra.number}}</p>
+    <p>{{extra.text}}</p>
+  </div>
+</div>
+</div>

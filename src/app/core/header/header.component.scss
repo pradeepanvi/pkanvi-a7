@@ -1,0 +1,65 @@
+.logo, .bottom_txt {
+    width: 100%;
+  }
+  
+  .navbar-nav {
+    margin: 0;
+    padding: 0;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      a {
+        color: inherit;
+        padding: 0.2rem 1rem;
+      }
+      ul {
+        font-size: 80%;
+      }
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .navbar-nav li {
+      ul {
+        position: relative;
+        height: 10%;
+        transition: 0.5s all;
+      }
+      &:hover ul {
+        height: 100%;
+      }
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .bottom_txt {
+      display: none;
+    }
+    button {
+      + .collapse {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s all;
+        transform: translateY(100px);
+      }
+      &.open + .collapse {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    .navbar {
+      width: 100%;
+      .navbar-toggler {
+        position: absolute;
+        top: -36px;
+        right: 0;
+      }
+    }
+  }
