@@ -23,6 +23,9 @@ import { WhatWeDoComponent } from './home/what-we-do/what-we-do.component';
 import { ProjectsComponent } from './home/projects/projects.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { StartProjectComponent } from './start-project/start-project.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ListComponent } from './portfolio/list/list.component';
+import { DetailComponent } from './portfolio/detail/detail.component';
 
 
 @NgModule({
@@ -39,6 +42,9 @@ import { StartProjectComponent } from './start-project/start-project.component';
     ProjectsComponent,
     ContactComponent,
     StartProjectComponent,
+    PortfolioComponent,
+    ListComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

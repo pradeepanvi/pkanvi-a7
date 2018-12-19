@@ -1,0 +1,22 @@
+<div class="short-menu">
+  <ul>
+    <li><a href="#">Show All</a></li>
+    <li><a href="#">PSD To HTML</a></li>
+    <li><a href="#">Wordpress</a></li>
+    <li><a href="#">HTML Email</a></li>
+    <li><a href="#">Angular 2</a></li>
+    <li><a href="#">Megento</a></li>
+  </ul>
+</div>
+<article class="project-list clearfix">
+  <aside *ngFor="let project of projects.portfolio; let i = index">
+    <div class="head_area">
+      <p><a href="#">{{project.category}}</a></p>
+      <h3><a [routerLink]=[i]>{{project.name}}</a></h3>
+    </div>
+    <div class="img_area">
+      <a [routerLink]=[i] class="overlay"></a>
+      <img src="{{project.thumb}}">
+    </div>
+  </aside>
+</article>

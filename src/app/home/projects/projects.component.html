@@ -3,19 +3,18 @@
     <div class="col-md-6 offset-md-3">
       <h2>Projects</h2>
       <p class="text-center">I have put my heart, commitment and loads of work in each of these projects. <br>I am proud of all of them.</p>
-      <p class="text-center"><a routerLink="new" class="btn btn-info">Add Project</a></p>
     </div>
   </div>
   </div>
   <article class="project-list clearfix">
-    <aside >
+    <aside *ngFor="let project of projects.portfolio; let i = index">
       <div class="head_area">
-        <p><a href="#">PSD to HTML to Wordpress</a></p>
-        <h3><a href="#">project.name</a></h3>
+        <p><a href="#">{{project.category}}</a></p>
+        <h3><a routerLink="portfolio/{{i}}">{{project.name}}</a></h3>
       </div>
       <div class="img_area">
-        <a href="#" routerLink="portfolio" class="overlay"></a>
-        <img src="../../../assets/images/projects/achva.jpg">
+        <a routerLink="portfolio/{{i}}" class="overlay"></a>
+        <img src="{{project.thumb}}">
       </div>
     </aside>
   </article>

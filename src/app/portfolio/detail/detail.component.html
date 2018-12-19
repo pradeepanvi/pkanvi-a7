@@ -1,0 +1,37 @@
+<div class="container detail-sec">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="img_area">
+        <a href="#">
+          <img [src]="project.portfolio[id].main_img">
+        </a>
+      </div>
+      <div class="role-list">
+        <ul class="row">
+          <li class="col-md-6" *ngFor="let tech of project.portfolio[id].technologies"><i class="fa {{tech.icon}} fa-2x fa-fw"></i>{{tech.text}}</li>
+        </ul>
+      </div>
+      <div class="img_area">
+        <a href="#">
+          <img [src]="project.portfolio[id].slider_img1">
+        </a>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <h1>{{project.portfolio[id].name}}</h1>
+      <p>{{project.portfolio[id].detail}}</p>
+      <hr>
+      <span class="detail-container"><span class="detail-label">Client</span><span class="detail-value">{{project.portfolio[id].client}}</span></span>
+      <span class="detail-container"><span class="detail-label">Link</span><span class="detail-value"><a href="{{project.link}}" target="_blank">{{project.portfolio[id].link}}</a></span></span>
+    </div>
+  </div>
+</div>
+<div class="bottom-nav">
+  <div class="container">
+    <ul class="d-flex justify-content-between">
+      <li *ngIf="prevS"><a routerLink="../{{id-1}}"><i class="fa fa-arrow-circle-left"></i> Prev</a></li>
+      <li><a routerLink="../">Main Portfolio</a></li>
+      <li *ngIf="nextS"><a routerLink="../{{id+1}}">Next <i class="fa fa-arrow-circle-right"></i></a></li>
+    </ul>
+  </div>
+</div>
