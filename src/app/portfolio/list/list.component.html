@@ -1,15 +1,15 @@
-<div class="short-menu">
+<div class="short-menu" id="filters">
   <ul>
-    <li><a href="#">Show All</a></li>
-    <li><a href="#">PSD To HTML</a></li>
-    <li><a href="#">Wordpress</a></li>
-    <li><a href="#">HTML Email</a></li>
-    <li><a href="#">Angular 2</a></li>
-    <li><a href="#">Megento</a></li>
+    <li><a href="#" data-filter="*">Show All</a></li>
+    <li><a href="#" data-filter=".metal">PSD To HTML</a></li>
+    <li><a href="#" data-filter=".metal">Wordpress</a></li>
+    <li><a href="#" data-filter=".metal">HTML Email</a></li>
+    <li><a href="#" data-filter=".metal">Angular 2</a></li>
+    <li><a href="#" data-filter=".metal">Megento</a></li>
   </ul>
 </div>
-<article class="project-list clearfix">
-  <aside *ngFor="let project of projects.portfolio; let i = index">
+<article class="project-list clearfix grid">
+  <aside *ngFor="let project of projects.portfolio; let i = index" class="metal">
     <div class="head_area">
       <p><a href="#">{{project.category}}</a></p>
       <h3><a [routerLink]=[i]>{{project.name}}</a></h3>

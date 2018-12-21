@@ -206,6 +206,45 @@
                 }
             ]
 
+        },
+        {
+            "name" : "Project 3",
+            "category" : "PSD to HTML",
+            "detail" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
+            "client" : "Project",
+            "link" : "Project",
+            "thumb" : "../../assets/images/projects/achva.jpg",
+            "main_img" : "../../assets/images/projects/achva-detail.jpg",
+            "slider_img1" : "../../assets/images/projects/achva-inner.jpg",
+            "slider_img2" : "../../assets/images/projects/achva-inner-2.jpg",
+            "roles" : "asfs",
+            "technologies" : [
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                },
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                },
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                },
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                },
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                },
+                {
+                    "icon" : "fa-desktop",
+                    "text" : "front_end"
+                }
+            ]
+
         }
     ]
 

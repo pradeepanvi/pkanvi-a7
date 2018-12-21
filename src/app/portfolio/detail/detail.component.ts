@@ -44,9 +44,12 @@ export class DetailComponent implements OnInit, DoCheck {
     if(this.id == 0){
       this.prevS = false;
       this.nextS = true;
-    } else {
+    } else if(this.id == this.project.portfolio.length-1){
       this.prevS = true;
       this.nextS = false;
+    } else {
+      this.prevS = true;
+      this.nextS = true;
     }
   }
 

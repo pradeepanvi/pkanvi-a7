@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListComponent implements OnInit {
   projects:any;
-
+  
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
