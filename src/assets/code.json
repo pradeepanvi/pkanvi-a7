@@ -50,44 +50,48 @@
     "what_text" : "<h2>What we do</h2>",
     "front_end_skills" : [
         {
-            "icon" : "fa-desktop",
-            "text" : "Perfect Design"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "Responsive"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "Pixel Perfect"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "HTML/CSS"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "LESS"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "SCSS/SASS"
-        },
-        {
-            "icon" : "fa-desktop",
-            "text" : "JavaScript"
-        },
-        {
-            "icon" : "fa-desktop",
+            "icon" : "fa-cut",
             "text" : "PSD to HTML, Sketch"
         },
         {
-            "icon" : "fa-desktop",
-            "text" : "SEO"
+            "icon" : "fa-pencil-ruler",
+            "text" : "Pixel Perfect"
         },
         {
-            "icon" : "fa-desktop",
-            "text" : "HTML Email"
+            "icon" : "fa-television",
+            "text" : "Responsive"
+        },
+        {
+            "icon" : "fa-html5",
+            "text" : "HTML5/CSS3"
+        },
+        {
+            "icon" : "fa-less",
+            "text" : "LESS"
+        },
+        {
+            "icon" : "fa-sass",
+            "text" : "SCSS/SASS"
+        },
+        {
+            "icon" : "fa-node-js",
+            "text" : "JavaScript"
+        },
+        {
+            "icon" : "fa-dashboard",
+            "text" : "Optimisation"
+        },
+        {
+            "icon" : "fa-check-square-o",
+            "text" : "Testing"
+        },
+        {
+            "icon" : "fa-gears",
+            "text" : "Web Development"
+        },
+        {
+            "icon" : "fa-search",
+            "text" : "SEO Friendly"
         }
     ],
     "back_end_skills" : [
@@ -131,7 +135,8 @@
     "portfolio" : [
         {
             "name" : "Project 1",
-            "category" : "PSD to HTML to Wordpress",
+            "category_name" : "PSD to HTML to Wordpress",
+            "category" : "psd_to_html",
             "detail" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
             "client" : "Project",
             "link" : "Project",
@@ -170,7 +175,8 @@
         },
         {
             "name" : "Project 2",
-            "category" : "PSD to HTML",
+            "category_name" : "PSD to HTML",
+            "category" : "psd_to_html html_to_wordpress",
             "detail" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
             "client" : "Project",
             "link" : "Project",
@@ -209,7 +215,8 @@
         },
         {
             "name" : "Project 3",
-            "category" : "PSD to HTML",
+            "category_name" : "PSD to HTML",
+            "category" : "psd_to_html",
             "detail" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer",
             "client" : "Project",
             "link" : "Project",
