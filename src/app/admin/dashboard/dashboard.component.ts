@@ -9,14 +9,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
   bannerForm: FormGroup;
-  banner:any;
+  admin:any;
 
   constructor(private http:HttpClient) {}
 
   ngOnInit() {
     this.http.get('../../../assets/code.json').subscribe(
       (res) => {
-        this.banner = res;
+        this.admin = res;
       }
     );
     this.initForm();

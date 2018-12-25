@@ -18,6 +18,15 @@ export class ContactComponent implements OnInit {
 
   onSubmit(){
     console.log(this.contactForm.value);
+    this.http.post('http://pkanvi.com/send.php', this.contactForm.value)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log('Error');
+        }
+      )
   }
 
   private initForm(){

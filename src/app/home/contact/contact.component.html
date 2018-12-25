@@ -20,7 +20,7 @@
 <mat-form-field class="example-full-width">
   <textarea matInput placeholder="Leave a comment"  formControlName="msg"></textarea>
 </mat-form-field>
-<button type="submit" class="btn">Send</button>
+<button type="submit" [disabled]="!contactForm.valid" class="btn">Send</button>
 </form>  
 </div>
 </div>

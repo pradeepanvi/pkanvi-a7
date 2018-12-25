@@ -1,5 +1,5 @@
-<header app-header class="d-flex align-items-end flex-column"></header>
-<div class="wrapper">
+<header *ngIf="admin" app-header class="d-flex align-items-end flex-column"></header>
+<div class="wrapper" [ngClass]="admin_wrap">
 <router-outlet></router-outlet>
-<footer app-footer></footer>
+<footer *ngIf="admin" app-footer></footer>
 </div>

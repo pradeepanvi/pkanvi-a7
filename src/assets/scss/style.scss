@@ -66,6 +66,9 @@ body {
     }
     .wrapper {
       padding-left: 300px;
+      &.admin_wrap{
+        padding-left: 0;
+      }
     }
   }
   

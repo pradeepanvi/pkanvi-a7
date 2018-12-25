@@ -4,11 +4,8 @@
   <meta charset="utf-8">
   <title>Pkanvi</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://isotope.metafizzy.co/js/isotope-docs.min.js?6"></script>
 </head>
 <body>
   <app-root></app-root>
@@ -16,13 +13,13 @@
   <script>
     $(window).on('load', function(){
       isotope2();
-      var about = $('.about');
-      window.onscroll = function(){
-        console.log('scroll')
-        if((about.offset().top + about.innerHeight()/2) < window.scrollY){
-          counter();
-        }
-      }
+      // var about = $('.about');
+      // window.onscroll = function(){
+      //   console.log('scroll')
+      //   if((about.offset().top + about.innerHeight()/2) < window.scrollY){
+      //     counter();
+      //   }
+      // }
     });
     $('body').on('click', function(){
       isotope2();

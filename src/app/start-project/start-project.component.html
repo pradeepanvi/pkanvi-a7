@@ -66,7 +66,7 @@
                 </div>
               </aside>
               <aside>
-                <button class="btn" type="submit">Send Details</button>
+                <button class="btn" [disabled]="!projectForm.valid" type="submit">Send Details</button>
               </aside>
             </form>
           </div>

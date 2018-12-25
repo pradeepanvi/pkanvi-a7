@@ -1,7 +1,200 @@
-<form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="exampleInputPassword1">Banner text</label>
-    <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" placeholder="Password" [value]="banner.banner"></textarea>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <span data-feather="home"></span>
+                Dashboard <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Banner
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Products
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Banner</h1>
+        </div>
+        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Banner text</label>
+            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.banner"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+        </form>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">About</h1>
+        </div>
+        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Banner text</label>
+            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.about_txt"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+        </form>
+
+        <h3>Rolls</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let roll of admin.about_rolls">
+                <td><i class="fa {{roll.icon}} fa"></i></td>
+                <td>{{roll.head}}</td>
+                <td>
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Extra</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let extra of admin.about_extra">
+                <td>{{extra.number}}</td>
+                <td>{{extra.text}}</td>
+                <td>
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Skills</h1>
+        </div>
+        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Banner text</label>
+            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.what_text"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+        </form>
+
+        <h3>Front End Skills</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let skill of admin.front_end_skills">
+                <td><i class="fa {{skill.icon}}"></i></td>
+                <td>{{skill.text}}</td>
+                <td>
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Back End Skills</h3>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let skill of admin.back_end_skills">
+                <td><i class="fa {{skill.icon}}"></i></td>
+                <td>{{skill.text}}</td>
+                <td>
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Portfolio</h1>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of admin.portfolio">
+                <td><img [src]=project.thumb style="width:100px"></td>
+                <td>{{project.name}}</td>
+                <td>
+                  <div class="btn-group mr-2">
+                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
+                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
