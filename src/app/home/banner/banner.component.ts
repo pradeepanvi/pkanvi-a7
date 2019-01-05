@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: '[app-banner]',
@@ -9,15 +9,15 @@ import { HttpClient } from "@angular/common/http";
 export class BannerComponent implements OnInit {
   banner:any;
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    this.http.get('../../../assets/code.json').subscribe(
+    this.http.get('../../assets/code.json').subscribe(
       (res) => {
         this.banner = res;
+        console.log(this.banner);
       }
-    );
-    console.log(this.banner);
+    )
   }
 
 }

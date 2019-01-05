@@ -1,0 +1,24 @@
+<h3>Rolls</h3>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let roll of admin.about_rolls; index as i">
+        <td><i class="fa {{roll.icon}} fa"></i></td>
+        <td>{{roll.head}}  {{i}}</td>
+        <td>
+          <div class="btn-group mr-2">
+            <button class="btn btn-sm btn-outline-secondary" (click)="editRoll(i)">Edit</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="deleteRoll(id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

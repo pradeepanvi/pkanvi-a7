@@ -26,7 +26,18 @@ import { StartProjectComponent } from './start-project/start-project.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ListComponent } from './portfolio/list/list.component';
 import { DetailComponent } from './portfolio/detail/detail.component';
+import { RollDashoardComponent } from './admin/dashboard/roll-dashoard/roll-dashoard.component';
+import { RollDashboardEditComponent } from './admin/dashboard/roll-dashoard/roll-dashboard-edit/roll-dashboard-edit.component';
+import { ExtraDashboardComponent } from './admin/dashboard/extra-dashboard/extra-dashboard.component';
+import { ExtraDashboardEditComponent } from './admin/dashboard/extra-dashboard/extra-dashboard-edit/extra-dashboard-edit.component';
+import { FrontEndDashboardComponent } from './admin/dashboard/front-end-dashboard/front-end-dashboard.component';
+import { FrontEndDashboardEditComponent } from './admin/dashboard/front-end-dashboard/front-end-dashboard-edit/front-end-dashboard-edit.component';
+import { BackEndDashboardComponent } from './admin/dashboard/back-end-dashboard/back-end-dashboard.component';
+import { BackEndDashboardEditComponent } from './admin/dashboard/back-end-dashboard/back-end-dashboard-edit/back-end-dashboard-edit.component';
+import { PortfolioDashboardComponent } from './admin/dashboard/portfolio-dashboard/portfolio-dashboard.component';
+import { PortfolioDashboardEditComponent } from './admin/dashboard/portfolio-dashboard/portfolio-dashboard-edit/portfolio-dashboard-edit.component';
 
+import { DataService } from "../shared/data.service";
 
 @NgModule({
   declarations: [
@@ -45,6 +56,16 @@ import { DetailComponent } from './portfolio/detail/detail.component';
     PortfolioComponent,
     ListComponent,
     DetailComponent,
+    RollDashoardComponent,
+    RollDashboardEditComponent,
+    ExtraDashboardComponent,
+    ExtraDashboardEditComponent,
+    FrontEndDashboardComponent,
+    FrontEndDashboardEditComponent,
+    BackEndDashboardComponent,
+    BackEndDashboardEditComponent,
+    PortfolioDashboardComponent,
+    PortfolioDashboardEditComponent,
   ],
   imports: [
     BrowserModule,

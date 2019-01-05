@@ -1,0 +1,17 @@
+<div class="col-sm-12">
+    <h3>Extra</h3>
+    <form [formGroup]="extraForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Extra Number</label>
+        <input type="text" class="form-control" formControlName="number">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Extra text</label>
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="btn-group">
+      <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+    </div>

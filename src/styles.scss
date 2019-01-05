@@ -5,3 +5,14 @@
 //@import "../node_modules/font-awesome/css/font-awesome.css";
 @import "../src/assets/scss/isotope.scss";
 @import "../src/assets/scss/style.scss";
+
+.icon_list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    dd{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+}

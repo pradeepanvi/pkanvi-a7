@@ -58,55 +58,9 @@
           <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
         </form>
 
-        <h3>Rolls</h3>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let roll of admin.about_rolls">
-                <td><i class="fa {{roll.icon}} fa"></i></td>
-                <td>{{roll.head}}</td>
-                <td>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-roll-dashoard></app-roll-dashoard>
 
-        <h3>Extra</h3>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let extra of admin.about_extra">
-                <td>{{extra.number}}</td>
-                <td>{{extra.text}}</td>
-                <td>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-extra-dashboard></app-extra-dashboard>
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Skills</h1>
@@ -119,82 +73,12 @@
           <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
         </form>
 
-        <h3>Front End Skills</h3>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let skill of admin.front_end_skills">
-                <td><i class="fa {{skill.icon}}"></i></td>
-                <td>{{skill.text}}</td>
-                <td>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-front-end-dashboard></app-front-end-dashboard>
 
-        <h3>Back End Skills</h3>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let skill of admin.back_end_skills">
-                <td><i class="fa {{skill.icon}}"></i></td>
-                <td>{{skill.text}}</td>
-                <td>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-back-end-dashboard></app-back-end-dashboard>
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Portfolio</h1>
-        </div>
-        <div class="table-responsive">
-          <table class="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let project of admin.portfolio">
-                <td><img [src]=project.thumb style="width:100px"></td>
-                <td>{{project.name}}</td>
-                <td>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Edit</button>
-                    <button class="btn btn-sm btn-outline-secondary">Delete</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-portfolio-dashboard></app-portfolio-dashboard>
+        
       </main>
     </div>
   </div>

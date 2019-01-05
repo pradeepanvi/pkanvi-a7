@@ -1,0 +1,24 @@
+<h3>Back End Skills <button class="btn btn-sm btn-primary" (click)="add()">Add</button></h3>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of admin.back_end_skills; index as i">
+        <td><i class="fa {{skill.icon}}"></i></td>
+        <td>{{skill.text}}</td>
+        <td>
+          <div class="btn-group mr-2">
+            <button class="btn btn-sm btn-outline-secondary" (click)="editBSkill(i)">Edit</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="deleteBSkill(id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
