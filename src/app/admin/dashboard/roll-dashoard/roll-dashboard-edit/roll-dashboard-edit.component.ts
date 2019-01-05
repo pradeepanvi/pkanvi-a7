@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { DataService } from "../../../../../shared/data.service";
 import { FormGroup, FormControl } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-roll-dashboard-edit',
@@ -10,16 +11,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RollDashboardEditComponent implements OnInit {
   font_awesome:any;
+  id: number;
+  editMode = false;
   rollForm: FormGroup;
   @ViewChild('iconValue') iconValue: ElementRef;
   @ViewChild('textValue') textValue: ElementRef;
 
-  constructor(private dataService:DataService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private dataService:DataService, 
+              private http:HttpClient,
+              private router:Router, 
+              private route:ActivatedRoute) { }
 
 
   ngOnInit() {
     this.font_awesome = this.dataService.font_awesome;
-    this.initForm();
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.editMode = params['id'] != null;
+        this.initForm();
+      }
+    )
   }
 
   iconClick(index){
@@ -28,6 +40,16 @@ export class RollDashboardEditComponent implements OnInit {
   }
 
   onSubmit(){
+    this.http.post('https://pkanvi-92987.firebaseio.com/roll.json', this.rollForm.value).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
+    if(this.editMode){
+
+    } else {
+      this.dataService.addRoll(this.rollForm.value);
+    }
     console.log(this.rollForm.value);
   }
 
@@ -36,6 +58,15 @@ export class RollDashboardEditComponent implements OnInit {
   }
 
   private initForm(){
+    let icon = '';
+    let text = '';
+    if(this.editMode){
+      this.http.get('https://pkanvi-92987.firebaseio.com/roll.json').subscribe(
+        (res) => {
+          console.log(res);
+        }
+      )
+    }
     this.rollForm = new FormGroup({
       'icon' : new FormControl(this.iconValue.nativeElement.value),
       'name' : new FormControl(this.textValue.nativeElement.value)

@@ -37,41 +37,38 @@
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Banner</h1>
+          <h4 class="h4">Banner</h4>
         </div>
-        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="bannerForm" (ngSubmit)="bannerSubmit()">
           <div class="form-group">
-            <label for="exampleInputPassword1">Banner text</label>
-            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.banner"></textarea>
+            <textarea class="form-control" formControlName="banner" [value]="banner.banner"></textarea>
           </div>
-          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+          <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!bannerForm.valid">Submit</button>
         </form>
 
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">About</h1>
+          <h4 class="h4">About</h4>
         </div>
-        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="aboutForm" (ngSubmit)="aboutSubmit()">
           <div class="form-group">
-            <label for="exampleInputPassword1">Banner text</label>
-            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.about_txt"></textarea>
+            <textarea class="form-control" formControlName="about" [value]="about.about"></textarea>
           </div>
-          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
+          <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!aboutForm.valid">Submit</button>
+        </form>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h4 class="h4">What</h4>
+        </div>
+        <form [formGroup]="whatForm" (ngSubmit)="whatSubmit()">
+          <div class="form-group">
+            <textarea class="form-control" formControlName="what" [value]="what.what"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!whatForm.valid">Submit</button>
         </form>
 
         <app-roll-dashoard></app-roll-dashoard>
 
         <app-extra-dashboard></app-extra-dashboard>
-
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Skills</h1>
-        </div>
-        <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="exampleInputPassword1">Banner text</label>
-            <textarea type="text" class="form-control" id="exampleInputPassword1" formControlName="banner" [value]="admin.what_text"></textarea>
-          </div>
-          <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>
-        </form>
 
         <app-front-end-dashboard></app-front-end-dashboard>
 

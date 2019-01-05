@@ -20,6 +20,10 @@ export class RollDashoardComponent implements OnInit {
     );
   }
 
+  add(){
+    this.router.navigate(['add-roll'], {relativeTo: this.route})
+  }
+
   editRoll(id){
     this.router.navigate(['edit-roll/'+id], {relativeTo: this.route})
   }

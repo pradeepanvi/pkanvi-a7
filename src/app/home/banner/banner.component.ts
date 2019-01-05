@@ -12,7 +12,7 @@ export class BannerComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    this.http.get('../../assets/code.json').subscribe(
+    this.http.get('https://pkanvi-92987.firebaseio.com/banner.json').subscribe(
       (res) => {
         this.banner = res;
         console.log(this.banner);
