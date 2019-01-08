@@ -1,8 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
-import { Roll } from "./roll.model";
-
 @Injectable({
     providedIn: 'root'
 })
