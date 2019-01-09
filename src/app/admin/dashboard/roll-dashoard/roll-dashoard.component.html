@@ -10,14 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let roll of rolls.rolls; index as i">
+      <tr *ngFor="let roll of rolls.rolls">
         <td><i class="fa {{roll.icon}} fa"></i></td>
-        <td>{{roll.head}}  {{i}}</td>
+        <td>{{roll.head}}</td>
         <td>{{roll.text}}</td>
         <td>
           <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary" (click)="editRoll(i, roll._id)">Edit</button>
-            <button class="btn btn-sm btn-outline-secondary" (click)="deleteRoll(roll._id)">Delete</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="edit(roll._id)">Edit</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="delete(roll._id)">Delete</button>
           </div>
         </td>
       </tr>

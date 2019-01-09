@@ -24,6 +24,8 @@ const routes: Routes = [
     {path:'', component:DashboardComponent},
     {path:'add-roll', component:RollDashboardEditComponent},
     {path:'edit-roll/:id', component:RollDashboardEditComponent},
+    {path:'add-extra', component:ExtraDashboardEditComponent},
+    {path:'edit-extra/:id', component:ExtraDashboardEditComponent},
     {path:'edit-Fskill/:id', component:FrontEndDashboardEditComponent},
     {path:'add-Bskill', component:BackEndDashboardEditComponent},
     {path:'edit-Bskill/:id', component:BackEndDashboardEditComponent},

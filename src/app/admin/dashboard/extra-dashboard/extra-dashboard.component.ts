@@ -8,20 +8,33 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./extra-dashboard.component.scss']
 })
 export class ExtraDashboardComponent implements OnInit {
-  admin:any;
+  extras:any;
 
   constructor(private http:HttpClient, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit() {
-    this.http.get('../../../assets/code.json').subscribe(
+    this.http.get('http://localhost:3000/extra').subscribe(
       (res) => {
-        this.admin = res;
+        this.extras = res;
+        console.log(this.extras);
       }
-    );
+    )
   }
 
-  editExtra(id){
+  add(){
+    this.router.navigate(['add-extra'], {relativeTo: this.route})
+  }
+
+  edit(id){
     this.router.navigate(['edit-extra/'+id], {relativeTo: this.route})
+  }
+
+  delete(id){
+    this.http.delete('http://localhost:3000/extra/'+id).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
   }
 
 }

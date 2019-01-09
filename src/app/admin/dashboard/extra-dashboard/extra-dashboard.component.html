@@ -1,4 +1,4 @@
-<h3>Extra</h3>
+<h3>Extra  <button class="btn btn-sm btn-primary" (click)="add()">Add</button></h3>
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
@@ -9,13 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let extra of admin.about_extra; index as i">
+      <tr *ngFor="let extra of extras.extras">
         <td>{{extra.number}}</td>
         <td>{{extra.text}}</td>
         <td>
           <div class="btn-group mr-2">
-              <button class="btn btn-sm btn-outline-secondary" (click)="editExtra(i)">Edit</button>
-              <button class="btn btn-sm btn-outline-secondary" (click)="deleteBSkill(id)">Delete</button>
+              <button class="btn btn-sm btn-outline-secondary" (click)="edit(extra._id)">Edit</button>
+              <button class="btn btn-sm btn-outline-secondary" (click)="delete(extra._id)">Delete</button>
           </div>
         </td>
       </tr>
