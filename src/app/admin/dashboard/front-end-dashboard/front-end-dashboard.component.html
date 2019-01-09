@@ -1,4 +1,4 @@
-<h3>Front End Skills</h3>
+<h3>Front End Skills  <button class="btn btn-sm btn-primary" (click)="add()">Add</button></h3>
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
@@ -9,13 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let skill of admin.front_end_skills; index as i">
+      <tr *ngFor="let skill of front_end.fronts">
         <td><i class="fa {{skill.icon}}"></i></td>
         <td>{{skill.text}}</td>
         <td>
           <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary" (click)="editFSkill(i)">Edit</button>
-            <button class="btn btn-sm btn-outline-secondary" (click)="deleteFSkill(id)">Delete</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="edit(skill._id)">Edit</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="delete(skill._id)">Delete</button>
           </div>
         </td>
       </tr>

@@ -24,12 +24,16 @@ const routes: Routes = [
     {path:'', component:DashboardComponent},
     {path:'add-roll', component:RollDashboardEditComponent},
     {path:'edit-roll/:id', component:RollDashboardEditComponent},
+
     {path:'add-extra', component:ExtraDashboardEditComponent},
     {path:'edit-extra/:id', component:ExtraDashboardEditComponent},
-    {path:'edit-Fskill/:id', component:FrontEndDashboardEditComponent},
-    {path:'add-Bskill', component:BackEndDashboardEditComponent},
-    {path:'edit-Bskill/:id', component:BackEndDashboardEditComponent},
-    {path:'edit-extra/:id', component:ExtraDashboardEditComponent},
+
+    {path:'add-front-end', component:FrontEndDashboardEditComponent},
+    {path:'edit-front-end/:id', component:FrontEndDashboardEditComponent},
+
+    {path:'add-back-end', component:BackEndDashboardEditComponent},
+    {path:'edit-back-end/:id', component:BackEndDashboardEditComponent},
+
     {path:'edit-portfolio/:id', component:PortfolioDashboardEditComponent}
   ]}
 ];

@@ -8,19 +8,32 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./front-end-dashboard.component.scss']
 })
 export class FrontEndDashboardComponent implements OnInit {
-  admin:any;
+  front_end:any;
 
   constructor(private http:HttpClient, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit() {
-    this.http.get('../../../assets/code.json').subscribe(
+    this.http.get('http://localhost:3000/front-end').subscribe(
       (res) => {
-        this.admin = res;
+        this.front_end = res;
+        console.log(this.front_end);
       }
-    );
+    )
   }
 
-  editFSkill(id){
-    this.router.navigate(['edit-Fskill/'+id], {relativeTo: this.route})
+  add(){
+    this.router.navigate(['add-front-end'], {relativeTo: this.route})
+  }
+
+  edit(id){
+    this.router.navigate(['edit-front-end/'+id], {relativeTo: this.route})
+  }
+
+  delete(id){
+    this.http.delete('http://localhost:3000/front-end/'+id).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
   }
 }

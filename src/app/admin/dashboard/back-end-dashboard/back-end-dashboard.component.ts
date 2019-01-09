@@ -10,23 +10,33 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./back-end-dashboard.component.scss']
 })
 export class BackEndDashboardComponent implements OnInit {
-  admin:any;
+  back_end:any;
 
   constructor(private http:HttpClient, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit() {
-    this.http.get('../../../assets/code.json').subscribe(
+    this.http.get('http://localhost:3000/back-end').subscribe(
       (res) => {
-        this.admin = res;
+        this.back_end = res;
+        console.log(this.back_end);
       }
-    );
+    )
   }
 
   add(){
-    this.router.navigate(['add-Bskill'], {relativeTo: this.route})
+    this.router.navigate(['add-back-end'], {relativeTo: this.route})
   }
-  editBSkill(id){
-    this.router.navigate(['edit-Bskill/'+id], {relativeTo: this.route})
+
+  edit(id){
+    this.router.navigate(['edit-back-end/'+id], {relativeTo: this.route})
+  }
+
+  delete(id){
+    this.http.delete('http://localhost:3000/back-end/'+id).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
   }
 
 }

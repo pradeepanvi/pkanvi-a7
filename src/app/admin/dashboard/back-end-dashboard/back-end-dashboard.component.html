@@ -9,13 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let skill of admin.back_end_skills; index as i">
+      <tr *ngFor="let skill of back_end.backs">
         <td><i class="fa {{skill.icon}}"></i></td>
         <td>{{skill.text}}</td>
         <td>
           <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary" (click)="editBSkill(i)">Edit</button>
-            <button class="btn btn-sm btn-outline-secondary" (click)="deleteBSkill(id)">Delete</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="edit(skill._id)">Edit</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="delete(skill._id)">Delete</button>
           </div>
         </td>
       </tr>

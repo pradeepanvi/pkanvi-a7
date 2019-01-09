@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from 'src/shared/data.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Back } from '../../../../../shared/back-end.interface';
 
 @Component({
   selector: 'app-back-end-dashboard-edit',
@@ -17,50 +19,74 @@ export class BackEndDashboardEditComponent implements OnInit {
   @ViewChild('iconValue') iconValue: ElementRef;
   @ViewChild('textValue') textValue: ElementRef;
 
-  constructor(private dataService:DataService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private dataService:DataService, 
+              private http:HttpClient,
+              private router:Router, 
+              private route:ActivatedRoute) { }
 
 
   ngOnInit() {
     this.font_awesome = this.dataService.font_awesome;
     this.route.params.subscribe(
       (params: Params) => {
-        if(params['id'] != null){
-          this.id = params['id'];
-          this.editMode = true;
-        } else {
-          this.editMode = false;
-        }
+        this.id = params['id'];
+        this.editMode = params['id'] != null;
+        this.initF();
+        this.initForm();
       }
     )
-    this.initForm();
   }
 
   iconClick(index){
     this.iconValue.nativeElement.value = this.font_awesome[index];
-    this.initForm();
+    this.initF();
   }
 
   onSubmit(){
-    console.log(this.backEndForm.value);
+    if(this.editMode){
+      const updateOps = [
+        { "propName": "icon", "value": this.backEndForm.value.icon},
+        { "propName": "text", "value": this.backEndForm.value.text},
+      ];
+      this.http.patch('http://localhost:3000/back-end/'+this.id, updateOps).subscribe(
+        (res) => {
+          console.log(res);
+        }
+      )
+      this.router.navigate(['../../'], {relativeTo: this.route})
+    } else {
+      this.http.post('http://localhost:3000/back-end', this.backEndForm.value).subscribe(
+        (res) => {
+          console.log(res);
+        }
+      )
+      this.router.navigate(['../'], {relativeTo: this.route})
+    }
   }
 
   onCancel(){
-    this.router.navigate(['../../'], {relativeTo: this.route})
+    this.router.navigate(['../'], {relativeTo: this.route})
   }
 
   private initForm(){
-    console.log(this.id);
-    let icon = this.iconValue.nativeElement.value;
-    let text = this.textValue.nativeElement.value;
     if(this.editMode){
-      // icon = this.dataService.admin.back_end_skills[this.id].icon;
-      // text = this.dataService.admin.back_end_skills[this.id].text;
+      this.http.get('http://localhost:3000/back-end/'+this.id).subscribe(
+        (res : Back) => {
+          let icon = res.back.icon;
+          let text = res.back.text;
+          this.backEndForm = new FormGroup({
+            'icon' : new FormControl(icon),
+            'text' : new FormControl(text)
+          })
+        }
+      )
     }
+  }
+  
+  private initF(){
     this.backEndForm = new FormGroup({
-      'icon' : new FormControl(icon),
-      'name' : new FormControl(text)
+      'icon' : new FormControl(this.iconValue.nativeElement.value),
+      'text' : new FormControl(this.textValue.nativeElement.value)
     })
-  } 
-
-
+  }
 }
