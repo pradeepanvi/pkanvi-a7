@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Rolls } from '../../../../shared/roll.interface';
 
 @Component({
   selector: 'app-roll-dashoard',
@@ -14,8 +15,8 @@ export class RollDashoardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('http://localhost:3000/roll').subscribe(
-      (res) => {
-        this.rolls = res;
+      (res: Rolls) => {
+        this.rolls = res.rolls;
         console.log(this.rolls);
       }
     )

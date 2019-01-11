@@ -2,6 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import { DataService } from 'src/shared/data.service';
+import { Banner } from '../../../shared/banner.interface';
+import { About } from '../../../shared/about.interface';
+import { What } from '../../../shared/what.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,18 +25,18 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('https://pkanvi-92987.firebaseio.com/banner.json').subscribe(
-      (res) => {
-        this.banner = res;
+      (res: Banner) => {
+        this.banner = res.banner;
       }
     )
     this.http.get('https://pkanvi-92987.firebaseio.com/about.json').subscribe(
-      (res) => {
-        this.about = res;
+      (res: About) => {
+        this.about = res.about;
       }
     )
     this.http.get('https://pkanvi-92987.firebaseio.com/what.json').subscribe(
-      (res) => {
-        this.what = res;
+      (res: What) => {
+        this.what = res.what;
       }
     )
     this.http.get('../../../assets/code.json').subscribe(

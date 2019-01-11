@@ -5,3 +5,11 @@ export interface Roll {
         text:string
     }
 }
+
+export interface Rolls {
+    rolls: {
+        icon:string,
+        head:string,
+        text:string
+    }
+}

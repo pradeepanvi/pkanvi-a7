@@ -16,12 +16,25 @@ export class PortfolioDashboardComponent implements OnInit {
     this.http.get('../../../assets/code.json').subscribe(
       (res) => {
         this.admin = res;
+        console.log(this.admin)
       }
     );
   }
 
+  add(){
+    this.router.navigate(['add-portfolio'], {relativeTo: this.route})
+  }
+
   edit(id){
     this.router.navigate(['edit-portfolio/'+id], {relativeTo: this.route})
+  }
+
+  delete(id){
+    this.http.delete('http://localhost:3000/front-end/'+id).subscribe(
+      (res) => {
+        console.log(res);
+      }
+    )
   }
 
 }

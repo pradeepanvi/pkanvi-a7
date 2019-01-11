@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Extras } from '../../../../shared/extra.interface';
 
 @Component({
   selector: 'app-extra-dashboard',
@@ -14,8 +15,8 @@ export class ExtraDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('http://localhost:3000/extra').subscribe(
-      (res) => {
-        this.extras = res;
+      (res: Extras) => {
+        this.extras = res.extras;
         console.log(this.extras);
       }
     )

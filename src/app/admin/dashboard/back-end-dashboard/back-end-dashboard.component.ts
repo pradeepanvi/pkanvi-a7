@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from 'src/shared/data.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Backs } from '../../../../shared/back-end.interface';
 
 @Component({
   selector: 'app-back-end-dashboard',
@@ -16,8 +17,8 @@ export class BackEndDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('http://localhost:3000/back-end').subscribe(
-      (res) => {
-        this.back_end = res;
+      (res: Backs) => {
+        this.back_end = res.backs;
         console.log(this.back_end);
       }
     )

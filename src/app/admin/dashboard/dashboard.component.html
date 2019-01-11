@@ -41,7 +41,7 @@
         </div>
         <form [formGroup]="bannerForm" (ngSubmit)="bannerSubmit()">
           <div class="form-group">
-            <textarea class="form-control" formControlName="banner" [value]="banner.banner"></textarea>
+            <textarea class="form-control" formControlName="banner" [value]="banner"></textarea>
           </div>
           <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!bannerForm.valid">Submit</button>
         </form>
@@ -51,7 +51,7 @@
         </div>
         <form [formGroup]="aboutForm" (ngSubmit)="aboutSubmit()">
           <div class="form-group">
-            <textarea class="form-control" formControlName="about" [value]="about.about"></textarea>
+            <textarea class="form-control" formControlName="about" [value]="about"></textarea>
           </div>
           <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!aboutForm.valid">Submit</button>
         </form>
@@ -61,7 +61,7 @@
         </div>
         <form [formGroup]="whatForm" (ngSubmit)="whatSubmit()">
           <div class="form-group">
-            <textarea class="form-control" formControlName="what" [value]="what.what"></textarea>
+            <textarea class="form-control" formControlName="what" [value]="what"></textarea>
           </div>
           <button type="submit" class="btn btn-outline-secondary btn-sm" [disabled]="!whatForm.valid">Submit</button>
         </form>

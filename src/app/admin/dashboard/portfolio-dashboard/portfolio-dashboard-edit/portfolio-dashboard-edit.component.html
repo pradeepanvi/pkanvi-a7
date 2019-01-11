@@ -1,13 +1,118 @@
 <div class="col-sm-12">
   <h3>Portfolio</h3>
-  <form [formGroup]="frontEndForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="portfolioForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="exampleInputPassword1">Portfolio Image</label>
-      <input type="file" class="form-control" formControlName="image">
+      <label for="exampleInputPassword1">Name</label>
+      <input type="text" class="form-control" formControlName="name">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Portfolio Name</label>
-      <input type="text" class="form-control" formControlName="name">
+      <label for="exampleInputPassword1">Thumb Image</label>
+      <input type="file"  ng2FileSelect [uploader]="uploader" (change)="onThumbSelected($event)" class="form-control" formControlName="thumbImage">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Main Image</label>
+      <input type="file"  ng2FileSelect [uploader]="uploader" (change)="onMainSelected($event)" class="form-control" formControlName="mainImage">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Slider 1 Image</label>
+      <input type="file"  ng2FileSelect [uploader]="uploader" (change)="onSlide1Selected($event)" class="form-control" formControlName="slide1Image">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Slider 2 Image</label>
+      <input type="file"  ng2FileSelect [uploader]="uploader" (change)="onSlide2Selected($event)" class="form-control" formControlName="slide2Image">
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+          <th width="50%">Name</th>
+          <th>Size</th>
+          <th>Progress</th>
+          <th>Status</th>
+          <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of uploader.queue">
+          <td><strong>{{ item?.file?.name }}</strong></td>
+          <td *ngIf="uploader.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+          <td *ngIf="uploader.isHTML5">
+              <div class="progress" style="margin-bottom: 0;">
+                  <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+              </div>
+          </td>
+          <td class="text-center">
+              <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+              <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+              <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+          </td>
+          <td nowrap>
+              <button type="button" class="btn btn-success btn-xs"
+                      (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                  <span class="glyphicon glyphicon-upload"></span> Upload
+              </button>
+              <button type="button" class="btn btn-warning btn-xs"
+                      (click)="item.cancel()" [disabled]="!item.isUploading">
+                  <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+              </button>
+              <button type="button" class="btn btn-danger btn-xs"
+                      (click)="item.remove()">
+                  <span class="glyphicon glyphicon-trash"></span> Remove
+              </button>
+          </td>
+      </tr>
+      </tbody>
+  </table>
+  <div>
+    <div>
+        Queue progress:
+        <div class="progress" style="">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-success btn-s"
+            (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+        <span class="glyphicon glyphicon-upload"></span> Upload all
+    </button>
+    <button type="button" class="btn btn-warning btn-s"
+            (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+    </button>
+    <button type="button" class="btn btn-danger btn-s"
+            (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+        <span class="glyphicon glyphicon-trash"></span> Remove all
+    </button>
+  </div>      
+    <div class="form-group">
+      <label for="exampleInputPassword1">Category</label>
+      <select class="form-control" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category.category">
+          {{category.name}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Technologies</label>
+      <div *ngFor="let tech of technology">
+        <i class="fa {{tech.icon}}"></i>
+        <p>{{tech.name}}</p>
+        <input type="checkbox" formControlName="technology">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Client</label>
+      <input type="text" class="form-control" formControlName="client">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Link</label>
+      <input type="text" class="form-control" formControlName="link">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Detail</label>
+      <textarea class="form-control" formControlName="detail"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Rolls and Responsibility</label>
+      <textarea class="form-control" formControlName="rolls"></textarea>
     </div>
     <div class="btn-group">
     <button type="submit" class="btn btn-outline-secondary btn-sm">Submit</button>

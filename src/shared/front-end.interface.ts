@@ -4,3 +4,10 @@ export interface Front {
         text: String
     }
 }
+
+export interface Fronts {
+    fronts: {
+        icon: String,
+        text: String
+    }
+}

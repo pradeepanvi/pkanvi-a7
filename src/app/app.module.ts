@@ -37,6 +37,7 @@ import { BackEndDashboardEditComponent } from './admin/dashboard/back-end-dashbo
 import { PortfolioDashboardComponent } from './admin/dashboard/portfolio-dashboard/portfolio-dashboard.component';
 import { PortfolioDashboardEditComponent } from './admin/dashboard/portfolio-dashboard/portfolio-dashboard-edit/portfolio-dashboard-edit.component';
 
+import { FileSelectDirective } from "ng2-file-upload";
 import { DataService } from "../shared/data.service";
 
 @NgModule({
@@ -66,6 +67,7 @@ import { DataService } from "../shared/data.service";
     BackEndDashboardEditComponent,
     PortfolioDashboardComponent,
     PortfolioDashboardEditComponent,
+    FileSelectDirective,
   ],
   imports: [
     BrowserModule,

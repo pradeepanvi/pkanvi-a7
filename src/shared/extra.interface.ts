@@ -4,3 +4,10 @@ export interface Extra {
         text:string
     }
 }
+
+export interface Extras {
+    extras: {
+        number:number,
+        text:string
+    }
+}

@@ -4,3 +4,10 @@ export interface Back {
         text: String
     }
 }
+
+export interface Backs {
+    backs: {
+        icon: String,
+        text: String
+    }
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Fronts } from '../../../../shared/front-end.interface';
 
 @Component({
   selector: 'app-front-end-dashboard',
@@ -14,8 +15,8 @@ export class FrontEndDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('http://localhost:3000/front-end').subscribe(
-      (res) => {
-        this.front_end = res;
+      (res: Fronts) => {
+        this.front_end = res.fronts;
         console.log(this.front_end);
       }
     )

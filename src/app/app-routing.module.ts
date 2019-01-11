@@ -34,6 +34,7 @@ const routes: Routes = [
     {path:'add-back-end', component:BackEndDashboardEditComponent},
     {path:'edit-back-end/:id', component:BackEndDashboardEditComponent},
 
+    {path:'add-portfolio', component:PortfolioDashboardEditComponent},
     {path:'edit-portfolio/:id', component:PortfolioDashboardEditComponent}
   ]}
 ];
