@@ -23,7 +23,10 @@ export class DataService {
         { icon:'fa-node-js', name:'Node JS' },
         { icon:'fa-wordpress', name:'Wordpress' },
         { icon:'fa-grunt', name:'Grunt' }
-        
+    ]
+    technologySelected = [
+        false, false, false, false, false, 
+        false, false, false, false, false
     ]
     admin:any;
     private rolls  = [
