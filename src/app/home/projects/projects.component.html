@@ -7,7 +7,7 @@
   </div>
   </div>
   <article class="project-list clearfix">
-    <aside *ngFor="let project of projects.portfolio; let i = index">
+    <aside *ngFor="let project of projects; let i = index">
       <div class="head_area">
         <p><a href="#">{{project.category}}</a></p>
         <h3><a routerLink="portfolio/{{i}}">{{project.name}}</a></h3>

@@ -1,6 +1,6 @@
 <div class="head_txt_area">
   <div class="row">
-    <div class="col-md-6 offset-md-3" [innerHTML]="what.what_text">
+    <div class="col-md-6 offset-md-3" [innerHTML]="what">
     </div>
   </div>
 </div>
@@ -8,7 +8,7 @@
   <mat-tab-group>
       <mat-tab label="FRONT-END">
         <div class="skills-set row">
-          <aside class="col-sm-6 col-md-3" *ngFor="let skill of what.front_end_skills">
+          <aside class="col-sm-6 col-md-3" *ngFor="let skill of front_end">
               <i class="fa {{skill.icon}} fa-4x fa-fw"></i>
               <p>{{skill.text}}</p>
           </aside>
@@ -16,7 +16,7 @@
       </mat-tab>
       <mat-tab label="BACK-END">
         <div class="skills-set row">
-          <aside class="col-sm-6 col-md-3" *ngFor="let skill of what.back_end_skills">
+          <aside class="col-sm-6 col-md-3" *ngFor="let skill of back_end">
               <i class="fa {{skill.icon}} fa-4x fa-fw"></i>
               <p>{{skill.text}}</p>
           </aside>

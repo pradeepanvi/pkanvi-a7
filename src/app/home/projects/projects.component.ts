@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Projects } from '../../../shared/project.interface';
 
 @Component({
   selector: '[app-projects]',
@@ -12,11 +13,12 @@ export class ProjectsComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    this.http.get('../../../assets/code.json').subscribe(
-      (res) => {
-        this.projects = res;
+    this.http.get('http://localhost:3000/project').subscribe(
+      (res: Projects) => {
+        this.projects = res.projects;
+        console.log(this.projects)
       }
-    )
+    );
   }
 
 }

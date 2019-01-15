@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Banner } from '../../../shared/banner.interface';
 
 @Component({
   selector: '[app-banner]',
@@ -13,8 +14,8 @@ export class BannerComponent implements OnInit {
 
   ngOnInit() {
     this.http.get('https://pkanvi-92987.firebaseio.com/banner.json').subscribe(
-      (res) => {
-        this.banner = res;
+      (res: Banner) => {
+        this.banner = res.banner;
         console.log(this.banner);
       }
     )
